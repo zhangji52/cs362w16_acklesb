@@ -1,0 +1,6 @@
+Changed:
+remodel(check)
+smithy (check)
+great_hall (check)
+salvager (check)
+village (check)

@@ -1,0 +1,41 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "assert.h"
+        -:    2:#include "dominion.h"
+        -:    3:#include <stdio.h>
+        -:    4:#include "rngs.h"
+        -:    5:#include <stdlib.h>
+        -:    6:
+        -:    7://getCost function
+        -:    8:
+        -:    9:int getCost(int);
+        -:   10:
+        1:   11:int main(int argc, char ** argv){
+        -:   12:	struct gameState G;
+        1:   13:	int result, value, rando = 0;
+        -:   14:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
+        1:   15:			sea_hag, tribute, smithy};
+        1:   16:	rando = rand() % 10;
+        1:   17:	result = initializeGame(2, k, rando, &G);
+        1:   18:	assert(result == 0);
+        1:   19:	printf("Unittest 2:\n");
+        -:   20:	
+        -:   21:	//test bad case
+        1:   22:	value = -1;
+        1:   23:	result = getCost(value);
+        1:   24:	assert(result == -1);
+        -:   25:	
+        -:   26:	//testing good case
+        1:   27:	value = 1;
+        1:   28:	result = getCost(value);
+        -:   29:	//assert(result == 0);
+        1:   30:	value = 2;
+        1:   31:	result = getCost(value);
+        -:   32:	//assert(result == 2);
+        -:   33:	
+        1:   34:	printf("The test passed\n");
+        1:   35:	return 0;
+        -:   36:}

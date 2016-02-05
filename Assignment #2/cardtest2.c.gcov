@@ -1,0 +1,41 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "assert.h"
+        -:    2:#include "dominion.h"
+        -:    3:#include <stdio.h>
+        -:    4:#include "rngs.h"
+        -:    5:#include <stdlib.h>
+        -:    6:
+        -:    7://test smithy
+        1:    8:int main (int argc, char** argv) {
+        -:    9:	struct gameState G;
+        1:   10:	int result, card, choice1, choice2, choice3, handPos, bonus, rando = 0;
+        -:   11:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
+        1:   12:	       sea_hag, tribute, smithy};
+        1:   13:	rando = rand() % 10;
+        1:   14:	result = initializeGame(2, k, rando, &G);
+        1:   15:	assert(result == 0);
+        1:   16:	printf ("Card Test 2:\n");
+        -:   17:	
+        -:   18:	//set variables to values for test
+        1:   19:	card = 4;
+        1:   20:	choice1 = 0;
+        1:   21:	choice2 = 0;
+        1:   22:	choice3 = 0;
+        1:   23:	handPos = 4;
+        1:   24:	bonus = 0;
+        -:   25:	
+        -:   26:	//test invalid input
+        1:   27:	result = smithyFunc(-1, &G, 4);
+        1:   28:	assert(result == 0);
+        -:   29:	
+        -:   30:	//test valid input
+        1:   31:	result = smithyFunc(1, &G, 4);
+        1:   32:	assert(result == 0);
+        -:   33:	
+        1:   34:	printf("The test passed\n");
+        1:   35:	return 0;
+        -:   36:}

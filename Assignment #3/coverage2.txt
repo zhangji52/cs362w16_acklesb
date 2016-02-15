@@ -1,0 +1,28 @@
+Braden Ackles
+Coverage2.txt
+
+Code Coverage percentages:
+unittest1: 100%
+unittest2: 100%
+unittest3: 100%
+unittest4: 100%
+
+cardtest1: 23.1%
+cardtest2: 27.6%
+cardtest3: 20%
+cardtest4: 0%
+
+It was extremely difficult to get my unit test as well as cardtests to run or even compile. It took editing of
+the dominion.c to get it to final work. There was a missing bracket. There were also many mistakes in my code,
+that needed to be fixed. unittest3 as well as cardtest1-4 all have implicit declaration problems.
+
+However i finally got my code to compile. I used Gcov and all my unit tests have 100% coverage this makes sense because
+it should run every line. There aren't any loops or jumps so every line will be run. I had trouble getting my code to run without
+segfault, it turned out to be because the seed that was being passed to initializeGame and the beginning of every test. I was using
+the command line to get that and then wasn't actually using the command line so i just have it generate a random seed now in
+its place.
+
+There were many bugs that i found where assert would trip after 3 or for runs of a for loops. Even though the code should still return the
+same value after each one. However all of the bad cases failed appropriately. I did not understand how the function getCost worked
+It took an int and compared it in a switch case as a string. So I don't know how that works. I also am not entirely sure i was
+accessing the gameState struct correctly.

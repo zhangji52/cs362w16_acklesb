@@ -1,0 +1,14 @@
+In my implementation of testdominion with my version of dominion I got 68.79% code coverage. This
+is acceptable because I have quite a few edge case catchers to check or react differently. MY testdominion
+is by no means perfect however does play a full game of dominion and will get a winner. It doesn't have
+every feature available to happen but it does have most of them.
+
+I compared my testdominion on my version of dominion as well as on Christian Armatas. Firstly there
+was a problem where he had a differnt number of arguments for cardEffect then i did so i needed to fix that.
+The problem there was obvious he still had a bonus variable in the prototype however he did not use it. So removed
+that, then ran my testdominion on his code again and got 79% code coverage. Meaning that his implementation must
+produce my edge cases than mine, causing the program to need to use more lines of code to go in to all the
+edge case if statements. However as far as comparison of actual gameResults.out goes they were as similar as
+anything that has random variables can be. It took about the same number of turns to complete and look very similar
+the only difference was that there were random variables in the program that causes cards and other things to be
+different.

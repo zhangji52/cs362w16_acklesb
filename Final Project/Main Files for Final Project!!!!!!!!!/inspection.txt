@@ -1,0 +1,52 @@
+Braden Ackles
+Inspection.txt
+Option C: Code inspection
+
+Participants: Sophia Liu, Christian Armatas
+
+Firstly, I'm not entirely sure what how to formate this report, so I'm just going to go with it.
+
+Inspection of Sophia's Code:
+In Sophia's buyCard function there is a problem with changing the position/location of the card once it is drawn.
+There are a few lines commented out that prevent the card from actually being discarded. Currently the commented 
+line will draw a card from the deck and put in to the discard pile instead of in to the current players hand. This
+is obvious a problem because the card is one wasted and the player never gets a card but still gets the cost of the card subtracted
+from the coins the player has. This can cause the game to be in-completable. This is actually a really easy fix and I
+don't know how I didn't catch this sooner because it messes with the entire game and is very obvious when scrolling
+through that all you need to do is uncomment the line and the line and change the 3rd variable to 2 instead of 0.
+This will actually move the card as well as move it the the current players hand instead of to the discard pile.
+//state->supplyCount[supplyPos]--;
+//gainCard(supplyPos, state, 0, who);
+Should be changed too:
+state->supplyCount[supplyPos]--;
+gainCard(supplyPos, state, 2, who);
+I found this by using delta debugging to find out why the hand would end up empty after a few steps through the game.
+
+
+Inspection of Christian's Code:
+In Christian's code the initialize function has a bug. I do not know it it was on purpose or on accident but around like
+168 when drawing cards in the players hand. The for loop that draws the 5 cards is commented out so the players hand never
+gets any cards. This is a very easy bug to solve, simply uncomment the 4 lines that let the initialize function draw cards.
+With cards in the players hand there is not really a way to start the game. This would also explain why there was terrible
+code coverage in the part 4 of the project. Because the hand was never getting initialized. After looking at it for so long
+I never found the bug until I finally decided to look at the initialize function, I figured that would be the function that
+no one would touch and could assume correct. I was wrong. So because of this the hand count is never anything besides 0 and
+there are initially 0 cards in the players hand. After the first players turn though everyone gets there hands filled and the
+game plays as normal. So this just affects the first turn of the game.
+
+Inspection of my code from Sophia and Christian:
+Sophia and Christian both found bugs I purposely created at the beginning of the term in assignment 1. They both found that in
+my remodel function I flipped a > to be < in the first if statement that would check if the player had the ability to play remodel
+during that play. Causing it to fail when it should work and work when it should fail. This is very bad because it throws the entire game
+in to chaos.
+Sophia found that in my greatHallFunc I changed a variable that is hard coded in to pass to discardCard. The original line was:
+discardCard(handPos, currentPlayer, state, 2);
+Which was changed to:
+discardCard(handPos, currentPlayer, state, 3);
+This is changing the handpos of the card to discard so the wrong card gets put in the discard pile. Which screws with the players hand because they
+then do not have a card that they did not play.
+
+This code inspection was not a complete inspection, it was mearly a dive in inspection to find a bug or two and report
+them and there place to the developer. This is a very useful type of inspection because it does not require the inspector
+and developer to be in the same place and also allows more freedom when it comes to testing and how bugs are found. It is also
+more likely to reveal real world bugs instead of lab bugs.

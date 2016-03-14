@@ -1,0 +1,15 @@
+Bug Report Two:
+
+Sophia Liu, dominion.c
+	In the baron part of the switch statement. When a baron card is selected the program is sent ary,
+	the number of buys is never incremented which throws off the buying phase. Making it harder for that player to win
+	or if they are extremely unfortunate then they might not be able to complete the game at all. If theplayer ends up with
+	to many baron cards since the number of buys is never incremented they might not be able to buy any cards which influcence their
+	ability to play. I found this buy by using my whole game tester which showed weird buying activity when i ran it randomly through her
+	code. I then deduced it was from baron and ran a card tester on baron to see why it was acting weird. Showing that the number
+	of buys was never changed, i knew there was something wrong with that, after checking the way dominion the game is supposed to work
+	as well as my own implementation I found that numbuys was never increased for baron. This bug is around line 838 in dominion.c.
+	
+	This is a high priroity bug because it effects the buying phase of the program. It won't increment the amount of buyin that can happen
+	which totally messes the game up and makes it nearly impossible to move forward. If it happens. Although it is unlikely to happen it
+	is a high severity because it can destroy the game play.

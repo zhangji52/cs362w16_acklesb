@@ -1,0 +1,12 @@
+Salvager Function:
+	When testing the salvager function I couldn't find anything wrong with it. It always seemed
+	to work. Running 2000 tests it still seems to pass almost every time. Hardly any edge cases where found.
+	The coverage of the randomtestcard is about 63%. So a decent percentage of lines are executed. In order to get more
+	coverage going to the function instead of the switch statement got more lines executed because the function was expanded.
+	Also adding a case for negative values increased code coverage.
+	
+Adventurer Card:
+	The adventurer card wasn't as bullet proof a function as the salvager function. It had some more problems.
+	This could be due to the fact that its in the card effect function instead of in its own function like salvager,
+	because it was one of the functions we had to rewrite. The function had about 60% execution of lines. There
+	can be a case where an infinite loop comes if the the came doesn't have enough treasure cards. 

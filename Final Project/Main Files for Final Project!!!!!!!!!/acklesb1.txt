@@ -1,0 +1,12 @@
+Bug Report One:
+
+Sophia Liu, dominion.c
+	In the great hall function there is a bug where after drawing a card, the action from the card is never added to the
+	current players state. So if will through the program a loop if great hall is played because the player will have more
+	actions then the state says it will. This is located in the "great_hallFunc". This is a bad bug because although it is unlikely
+	to happen it so the game is basically uncompletable. Using my random tester I found a time when the game didn't work, then from
+	there using individual card testers on great_hallFunc to found the problem. Comparing my my version of dominion I confirmed that
+	this was the bug.
+	
+	This is a medium priority bug because it will happen when ever a greathall is selected. It is also a rather sever bug because
+	it will inhibit the game from being able to finish

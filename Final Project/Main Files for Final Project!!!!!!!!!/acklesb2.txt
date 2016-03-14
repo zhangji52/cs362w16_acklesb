@@ -1,0 +1,12 @@
+Bug Report Two:
+
+Sophia Liu, dominion.c
+	In the villageFunc after drawing a card the current players state for numactions is never changed. I didn't need any tools to find
+	this, just after looking over the code. knowing that there would be a bug in a specific area of the code. I was able to see that the
+	line just repeats its self and sets its self back to its self so knowing this won't do anything it is innately a bug. After looking
+	up what village is supposed to do it should be adding 2 to the numactions after drawing cards. This bug is located in the villageFunc
+	around line 683.
+	
+	This is a low priroity bug because it doesn't hurt the game play it just makes it more difficult to win. It doesn't making it
+	impossible to win it will just take longer and because of this it has a medium severity. That is because completing the game is
+	kind of the point of a game.

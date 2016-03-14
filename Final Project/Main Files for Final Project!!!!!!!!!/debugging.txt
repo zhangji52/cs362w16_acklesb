@@ -1,0 +1,41 @@
+Braden Ackles
+
+Debugging.txt Find and fixing a bug in my code.
+
+Lucy Wyman found a bug with my makefile and compiling. If you clean the directory and only have
+uncompiled code in the file so just .c and .py files along with the makefile. Then making most of the
+files will fail. This is because files such as rngs.o and other aren't made yet so they need to be compiled
+first and the make file does not explicitly say to make them. This is a major bug and needs fixing, altough it is in
+the make file and not in a .c file it still has a problem. Also some of the names need to be documented according to Lucy
+the target for some for example some of the definition names need to be different or documented. Using 
+To find this bug the Agans Principles I used were:
+	Understanding the System
+		This is important because without understanding how makefiles work and if files
+		exist or not then you would have no clue how to figure out that some files don't exist.
+	Making it Fail (It did already)
+		It would fail if files didn't exists so this was pretty easy to do.
+	Change one thing at a time
+		I only changed one line at a time to make sure that the make file would still work and compile everything.
+
+The last problem was with the makefile and I wasn't sure if that would count, so i found another one in my .c files
+
+After running the full program tester on my program, as well as individual card tester i found a bug with my remodelFunc.
+I actually found two bugs that can balance each other out. When creating a function for the card remodel on line
+591 i have a compare between the cost of the card in the hand plus two is less then cost of card the user selected.
+Well more often then not the it returns negative 1 because this is true far more often then it should be, because it is supposed to
+be the opposite the players card in hand is supposed to be less than the cost of the card to return negative one.
+Off of this another bug that i found that counteracts the previous bug, is when the function returns negative one to the cardeffect
+function it doesn't get/care about what is return the cardeffect function will always just return 0 so the problem is never displayed correctly.
+This causes a problem because when the program falls it never goes back to catch it self and just carries on as normal. So it doesn't show
+
+To fix this: in the switch statement case i will add a results = function return and based on that will return the correct value. Super simple.
+To find this bug the Agans Principles I used were:
+	Understanding the system:
+		Knowing how the system is supposed to work as well as having to have rewrite these functions at the beginning
+		of the term, it made it easier to understand that this is a problem for the function.
+	Quite thinking and look:
+		I stoped wondering why the program was just acting really weird and just looked at the code and saw that the bugs cancel
+		each other because that isn't the normal behaviour.
+	Divide and Conquer:
+		I divided and conquered by starting with my full program tester then splitting it in half each way down giving correct inputs
+		untill i got to the point where the correct input gave me an incorrect output.
